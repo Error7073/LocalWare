@@ -163,7 +163,7 @@ local function C_a()
 		["0"] = "０", ["1"] = "１", ["2"] = "２", ["3"] = "３", ["4"] = "４", ["5"] = "５", ["6"] = "６", ["7"] = "７", ["8"] = "８", ["9"] = "９"
 	}
 
-	local Words = loadstring(game:HttpGet("https://raw.githubusercontent.com/Error7073/ErrorsGoofyLibrary/refs/heads/main/words.lua"))()
+	local Words = loadstring(game:HttpGet("https://raw.githubusercontent.com/Error7073/ShittyAssBypasser/refs/heads/main/Words.lua"))()
 
 
 	local function ReplaceStr(str, find_str, replace_str)
