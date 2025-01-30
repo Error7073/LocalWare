@@ -152,19 +152,18 @@ local function C_a()
     local chat = TextChatService.ChatInputBarConfiguration.TargetTextChannel
 
     local Letters = {
-		["u"] = "น", ["s"] = "ѕ", ["h"] = "һ",
-		["l"] = "ӏ", ["x"] = "ẋ", ["f"] = "f", ["k"] = "k̇",
-		["c"] = "с̇", ["n"] = "ท",
-
-		["F"] = "F", ["U"] = "ᴜ", ["C"] = "ᴄ", ["K"] = "ᴋ",
-		["G"] = "Ḡ", ["I"] = "I", ["R"] = "Ṛ",
-		["L"] = "Ḷ",
-
-		["0"] = "０", ["1"] = "１", ["2"] = "２", ["3"] = "３", ["4"] = "４", ["5"] = "５", ["6"] = "６", ["7"] = "７", ["8"] = "８", ["9"] = "９"
+	    ["u"] = "น", ["s"] = "ร", ["h"] = "һ",
+	    ["l"] = "ӏ",
+		["n"] = "ท",
+	
+	    ["F"] = "ꜰ",
+	    ["E"] = "Ἐ",
+	    ["P"] = "Ῥ",
+	
+	    ["0"] = "０", ["1"] = "１", ["2"] = "２", ["3"] = "３", ["4"] = "４", ["5"] = "５", ["6"] = "６", ["7"] = "７", ["8"] = "８", ["9"] = "９"
 	}
 
 	local Words = loadstring(game:HttpGet("https://raw.githubusercontent.com/Error7073/ShittyAssBypasser/refs/heads/main/Words.lua"))()
-
 
 	local function ReplaceStr(str, find_str, replace_str)
 		local escaped_find_str = find_str:gsub("[%-%^%$%(%)%%%.%[%]%*%+%-%?]", "%%%0")
