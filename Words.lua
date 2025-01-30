@@ -50,6 +50,7 @@ local t = {
 	["Bitch"] = "Bίtch",
 	["Hitler"] = "Hitӏer",
 	["hitler"] = "һitӏer",
+	["HITLER"] = "HITLΈR",
 	["dick"] = "dίck",
 	["Dick"] = "Dίck",
 }
