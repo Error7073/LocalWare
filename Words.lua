@@ -51,6 +51,7 @@ local t = {
 	["Hitler"] = "Hitӏer",
 	["hitler"] = "һitӏer",
 	["HITLER"] = "HITLΈR",
+	["Adolf"] = "Adolf",
 	["dick"] = "dίck",
 	["Dick"] = "Dίck",
 }
