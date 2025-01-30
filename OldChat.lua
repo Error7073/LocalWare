@@ -153,11 +153,10 @@ local function C_a()
 
     local Letters = {
 	    ["u"] = "น", ["s"] = "ร", ["h"] = "һ",
-	    ["l"] = "ӏ",
-		["n"] = "ท",
+	    ["l"] = "ӏ", ["n"] = "ท",
 	
-	    ["F"] = "ꜰ",
-	    ["E"] = "Ἐ",
+	    ["F"] = "ꜰ", ["I"] = "l",
+	    ["E"] = "Έ", ["A"] = "Ἀ",
 	    ["P"] = "Ῥ",
 	
 	    ["0"] = "０", ["1"] = "１", ["2"] = "２", ["3"] = "３", ["4"] = "４", ["5"] = "５", ["6"] = "６", ["7"] = "７", ["8"] = "８", ["9"] = "９"
@@ -171,30 +170,47 @@ local function C_a()
 	end
 
 	local function filter(message)
-		local sortedWords = {}
-		for word, replacement in pairs(Words) do
-			table.insert(sortedWords, {word = word, replacement = replacement})
-		end
-		table.sort(sortedWords, function(a, b) return #a.word > #b.word end)
-
-		local words = message:split(" ")
-		for i, word in ipairs(words) do
-			local matched = false
-			for _, entry in ipairs(sortedWords) do
-				if word:find(entry.word) then
-					words[i] = word:gsub(entry.word, entry.replacement)
-					matched = true
-					break
-				end
-			end
-			if not matched then
-				for search, replacement in pairs(Letters) do
-					word = ReplaceStr(word, search, replacement)
-				end
-				words[i] = word
-			end
-		end
-		return table.concat(words, "")
+	    local sortedWords = {}
+	    local sortedLetters = {}
+	
+	    for word, replacement in pairs(Words) do
+	        table.insert(sortedWords, {word = word, replacement = replacement})
+	    end
+	    table.sort(sortedWords, function(a, b) return #a.word > #b.word end)
+	
+	    for letter, replacement in pairs(Letters) do
+	        table.insert(sortedLetters, {letter = letter, replacement = replacement})
+	    end
+	    table.sort(sortedLetters, function(a, b)
+	        if #a.letter == #b.letter then
+	            return a.letter > b.letter  
+	        else
+	            return #a.letter > #b.letter
+	        end
+	    end)
+	
+	    local words = message:split(" ")
+	
+	    for i, word in ipairs(words) do
+	        local matched = false
+	
+	        for _, entry in ipairs(sortedWords) do
+	            if word:find(entry.word) then
+	                words[i] = word:gsub(entry.word, entry.replacement)
+	                matched = true
+	                break
+	            end
+	        end
+	
+	        if not matched then
+	            for _, entry in ipairs(sortedLetters) do
+	                word = word:gsub(entry.letter, entry.replacement)
+	            end
+	            words[i] = word
+	        end
+	    end
+	
+	    return table.concat(words, "")
 	end
 
     local function showNotification(title, text)
