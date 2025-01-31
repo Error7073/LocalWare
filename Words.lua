@@ -58,5 +58,8 @@ local t = {
 	["TITTIES"] = "TlTTlES",
 	["tits"] = "tίtร",
 	["titties"] = "tίttίeร",
+	["twitter"] = "twίtter",
+	["Twitter"] = "Twίtter",
+	["TWITTER"] = "TWἸTTER",
 }
 return t
