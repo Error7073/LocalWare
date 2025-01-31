@@ -48,12 +48,15 @@ local t = {
 	["Ass"] = "Ἀѕѕ",
 	["bitch"] = "bίtch",
 	["Bitch"] = "Bίtch",
+	["Adolf"] = "Adolf",
 	["Hitler"] = "Hitӏer",
 	["hitler"] = "һitӏer",
 	["HITLER"] = "HITLΈR",
-	["Adolf"] = "Adolf",
 	["dick"] = "dίck",
 	["Dick"] = "Dίck",
+	["TITS"] = "TlTS",
+	["TITTIES"] = "TlTTlES",
+	["tits"] = "tίtร",
+	["titties"] = "tίttίeร",
 }
-
 return t
