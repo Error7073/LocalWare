@@ -61,5 +61,6 @@ local t = {
 	["twitter"] = "twίtter",
 	["Twitter"] = "Twίtter",
 	["TWITTER"] = "TWἸTTER",
+	["jerk"] = "ȷerk",
 }
 return t
